@@ -1,0 +1,20 @@
+info:
+  project_name: "cryptum"
+  project_start_date: 02/02/2020
+  name: "cryptum"
+  authors: "Wyatt Roersma"
+  authors_email: "wyatt@aucr.io"
+  description: "cryptum is a encryption made simple for python library."
+  license: 'Apache-2.0'
+  classifiers:
+    - 'Development Status :: 4 - Beta'
+    - 'Intended Audience :: Developers'
+    - 'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)'
+    - 'Programming Language :: Python :: 3.7'
+  url: 'https://aucr.io'
+
+
+version:
+  major: 0
+  minor: 0
+  release: 1
