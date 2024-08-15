@@ -1,46 +1,125 @@
-# cryptum
+# Cryptum
+
 [![Build Status](https://travis-ci.org/AUCR/cryptum.svg?branch=master)](https://travis-ci.org/AUCR/cryptum)
 [![codecov](https://codecov.io/gh/AUCR/cryptum/branch/master/graph/badge.svg)](https://codecov.io/gh/AUCR/AUCR)
+[![Test and Publish Cryptum](https://github.com/AUCR/cryptum/actions/workflows/test-and-publish.yml/badge.svg)](https://github.com/AUCR/cryptum/actions/workflows/test-and-publish.yml)
 
 ## Overview
 
-cryptum is a simple python encryption library that can generate rsa public/private keys and encrypt data for easy 
-transport between applications and languages.
+Cryptum is a simple Python encryption library that generates RSA public/private keys and encrypts data for easy transport between applications and languages. It provides a straightforward CLI interface for key management and file encryption/decryption.
 
-## Install with Pip
+## Features
 
-Example Install with Pip
+- Generate RSA public/private key pairs
+- Encrypt files using public keys
+- Decrypt files using private keys
+- Command-line interface for easy use
 
-    pip install cryptum
+## Installation
 
-### Easy cli examples:
+Install Cryptum using pip:
 
-#### Help example:
+```bash
+pip install cryptum
+```
 
-    cryptcli.py --help
-    Usage: cryptcli.py [OPTIONS]
-    
-    Options:
-      -e, --encrypt              Encrypt input file.
-      -f, --input_file FILENAME  The Input File.
-      -k, --input_key FILENAME   The Public/Private Key to use.
-      -d, --decrypt              Decrypt input file.
-      -o, --output TEXT          Output file.
-      -g, --generate             Generate Encryption Keys.
-      --version
-      --help                     Show this message and exit.
+## Usage
 
+### Command-line Interface
 
-#### Generate New Private/Public Keys:
+Cryptum provides a command-line interface `cryptcli.py` for easy use.
 
-    cryptcli.py -g
+#### Help
 
-#### Encrypt "test.txt" with public key example:
+```bash
+cryptcli.py --help
+```
 
-    cryptcli.py -e -f test.txt -k pub.txt
-    
-#### Decrypt test.txt.enc with the private key:    
-    
-    cryptcli.py -d -f test.txt.enc -k priv.txt
+Output:
+```
+Usage: cryptcli.py [OPTIONS]
 
+Options:
+  -e, --encrypt              Encrypt input file.
+  -f, --input_file FILENAME  The Input File.
+  -k, --input_key FILENAME   The Public/Private Key to use.
+  -d, --decrypt              Decrypt input file.
+  -o, --output TEXT          Output file.
+  -g, --generate             Generate Encryption Keys.
+  --version
+  --help                     Show this message and exit.
+```
 
+#### Generate New Private/Public Keys
+
+```bash
+cryptcli.py -g
+```
+
+#### Encrypt a File
+
+```bash
+cryptcli.py -e -f test.txt -k pub.txt
+```
+
+This command encrypts `test.txt` using the public key in `pub.txt`.
+
+#### Decrypt a File
+
+```bash
+cryptcli.py -d -f test.txt.enc -k priv.txt
+```
+
+This command decrypts `test.txt.enc` using the private key in `priv.txt`.
+
+### Python API
+
+You can also use Cryptum as a Python library in your projects. Here's a basic example:
+
+```python
+from cryptum import generate_keys, encrypt_file, decrypt_file
+
+# Generate keys
+public_key, private_key = generate_keys()
+
+# Encrypt a file
+encrypt_file('input.txt', 'input.txt.enc', public_key)
+
+# Decrypt a file
+decrypt_file('input.txt.enc', 'output.txt', private_key)
+```
+
+## Development
+
+To set up the development environment:
+
+1. Clone the repository
+2. Install development dependencies:
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
+3. Run tests:
+   ```bash
+   pytest
+   ```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Changelog
+
+### [0.0.2] - 2024-08-15
+- Added Python API documentation
+- Improved error handling in CLI
+
+### [0.0.1] - 2020-02-02
+- Initial release
+
+## Contact
+
+For questions and support, please open an issue on the GitHub repository.
