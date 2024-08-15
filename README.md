@@ -140,8 +140,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
-### [0.0.2] - 2024-08-15
+### [0.0.3] - 2024-08-15
 - Added Python API documentation
+- Added proper test suite with pytest
 - Improved error handling in CLI
 
 ### [0.0.1] - 2020-02-02
