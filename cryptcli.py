@@ -4,4 +4,3 @@ from cryptum import cryptapp
 
 if __name__ == '__main__':
     cryptapp.cryptum_cli()
-
