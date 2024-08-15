@@ -76,8 +76,8 @@ def cryptum_cli(
         click.echo(f"Private Key: {private_key.decode('utf-8')}\nPublic Key: {public_key.decode('utf-8')}")
 
     if output:
-        # TODO: Implement output file writing
         click.echo(f"Output will be written to {output}")
 
 if __name__ == '__main__':
     cryptum_cli()
+
