@@ -103,13 +103,40 @@ To set up the development environment:
    pytest
    ```
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+## Development
+
+To set up the development environment:
+
+1. Clone the repository
+2. Install development dependencies:
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
+3. Run tests:
+   ```bash
+   pytest
+   ```
+
+## Continuous Integration and Deployment
+
+This project uses GitHub Actions for continuous integration and deployment. The workflow does the following:
+
+1. Runs tests on multiple Python versions (3.7, 3.8, 3.9, 3.10)
+2. Lints the code using flake8
+3. Builds the package
+4. Publishes the package to PyPI on pushes to the main branch
+
+You can view the detailed workflow in the `.github/workflows/test-and-publish.yml` file.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
