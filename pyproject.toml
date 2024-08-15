@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cryptum"
+version = "0.0.2"
+description = "cryptum is an encryption made simple for python library."
+authors = [{name = "Wyatt Roersma", email = "wyatt@aucr.io"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+keywords = ["cryptography", "encryption"]
+dependencies = [
+    # Add your project dependencies here
+]
+
+[project.urls]
+Homepage = "https://aucr.io"
+Documentation = "https://aucr.io/cryptum/"
+Repository = "https://github.com/AUCR/cryptum"
+"Bug Tracker" = "https://github.com/AUCR/cryptum/issues"
+
+[project.scripts]
+cryptcli = "cryptum.cryptcli:main"
+
+[tool.setuptools]
+packages = ["cryptum"]

@@ -1,3 +1,3 @@
 pycryptodome
-YamlInfo
 click
+toml
